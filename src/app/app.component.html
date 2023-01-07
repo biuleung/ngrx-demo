@@ -1,0 +1,56 @@
+<div class="root">
+  <div class="content">
+    <div class="children">
+      <div class="d-flex gap-2 border border-secondary p-2 me-5">
+        <h5>Sync</h5>
+        <div>
+          <app-a></app-a>
+          <app-b></app-b>
+        </div>
+        <app-c></app-c>
+      </div>
+      <div class="d-flex gap-2 border border-secondary p-2">
+        <h5>Async</h5><app-weather></app-weather>
+      </div>
+    </div>
+    <h3>
+      Child components
+    </h3>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <button (click)="onIncrementCount()">
+        <h2>+</h2>
+      </button>
+      <button (click)="ondecrementCount()">
+        <h2>-</h2>
+      </button>
+    </div>
+    <div class="col-2">
+      <button [hidden]="isLogin"
+              (click)="Login()">
+        <h2>Login</h2>
+      </button>
+      <button [hidden]="!isLogin"
+              (click)="Logout()">
+        <h2>Logout</h2>
+      </button>
+    </div>
+    <div class="col-4">
+      <button (click)="handleGetSpecificWeather()">
+        <h2>Get Weather</h2>
+      </button>
+      <select #city
+              (change)="onSelectCityChange(city.value)">
+        <option value="Taipei city">Taipei city</option>
+        <option value="Tainan city">Tainan city</option>
+        <option value="Kaosiong city">Kaosiong city</option>
+        <option value="Chiayi city">Chiayi city</option>
+      </select>
+    </div>
+
+  </div>
+  <h2>
+    Root component
+  </h2>
+</div>

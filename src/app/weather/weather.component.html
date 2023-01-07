@@ -1,0 +1,22 @@
+<div class="comp">
+    <p>Weather component</p>
+
+    <div class="d-flex gap-3">
+        <div class="border p-3 weatherContent">
+            <ng-container *ngIf="weather$ | async as weather">
+                <p>
+                    6 hours weather forcast(Random)
+                </p>
+                <p> {{weather.records.location[0].locationName}}</p>
+                <p>{{weather.records.location[0].weatherElement[0].time[0].parameter.parameterName}}</p>
+            </ng-container>
+        </div>
+        <div class="border p-3 weatherContent">
+            <p>Specific city</p>
+            <ng-container *ngIf="location$ | async as location;">
+                <p> {{location.locationName}}</p>
+                <p>{{location.weatherElement[0].time[0].parameter.parameterName}}</p>
+            </ng-container>
+        </div>
+    </div>
+</div>

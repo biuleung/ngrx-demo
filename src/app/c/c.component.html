@@ -1,0 +1,7 @@
+<div class="comp">
+    <p>C component</p>
+    <ng-container *ngIf="info$ | async as info;">
+        <div>Name: <span>{{info.name}}</span></div>
+        <div>Time: <span>{{info.time}}</span></div>
+    </ng-container>
+</div>
